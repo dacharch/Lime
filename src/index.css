@@ -1,0 +1,199 @@
+:root {
+  --bg: #f3f4f6;
+  --card-bg: #ffffff;
+  --text: #1f2937;
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --danger: #ef4444;
+  --shadow-soft: rgba(0, 0, 0, 0.08);
+  --shadow-strong: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --text: #e2e8f0;
+  --primary: #8b5cf6;
+  --primary-hover: #7c3aed;
+  --danger: #fb7185;
+  --shadow-soft: rgba(255, 255, 255, 0.05);
+  --shadow-strong: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.app {
+  max-width: 680px;
+  margin: 2rem auto;
+  padding: 1rem 1.5rem;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.app-header h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.theme-toggle {
+  background: var(--card-bg);
+  box-shadow: 0 2px 8px var(--shadow-soft);
+  border: none;
+  border-radius: 50px;
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px var(--shadow-strong);
+}
+
+.task-form {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: var(--card-bg);
+  transition: 0.25s ease;
+}
+
+.task-form input::placeholder {
+  color: #9ca3af;
+}
+
+.task-form input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
+}
+
+.task-form button {
+  padding: 0.75rem 1.4rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.task-form button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.filter-bar {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.8rem;
+}
+
+.filter-bar button {
+  flex: 1;
+  padding: 0.55rem;
+  border-radius: 12px;
+  border: none;
+  background: var(--card-bg);
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--shadow-soft);
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.filter-bar button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px var(--shadow-strong);
+}
+
+.filter-bar button.active {
+  background: var(--primary);
+  color: white;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task-item {
+  background: var(--card-bg);
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.9rem;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px var(--shadow-soft);
+  transition: 0.25s ease;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px var(--shadow-strong);
+}
+
+.task-item.completed span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.task-item label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.delete-btn {
+  border: none;
+  background: transparent;
+  color: var(--danger);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.25);
+}
+
+.empty-state {
+  text-align: center;
+  font-size: 1.1rem;
+  opacity: 0.6;
+  margin-top: 2rem;
+}
+
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .task-item {
+    padding: 0.7rem 0.8rem;
+  }
+}
