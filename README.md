@@ -62,16 +62,23 @@ This project demonstrates clean component architecture, Context API, custom hook
 
 ---
 
-## ▶️ Getting Started
+## 🛠️ Installation Steps
 
-### 1. Clone the repository
+To set up and run this project locally, follow the steps below:
+
+### **1. Clone the repository**
 ```bash
-git clone https://github.com/your-username/task-manager-app
+https://github.com/dacharch/Lime
+
+cd task-manager-app
 
 npm install
 
-
 npm start
+
+
+
+
 
 
 
